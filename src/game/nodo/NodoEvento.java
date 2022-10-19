@@ -1,12 +1,16 @@
-package usm.inf.lp.tarea.nodo;
+package game.nodo;
 
-import usm.inf.lp.tarea.Item;
+import game.Item;
 
-public class NodoEvento {
+public class NodoEvento extends Nodo {
     String descripcion;
     String alternativa1;
     String alternativa2;
     Item resultado1;
     Item resultado2;
+
+    void interactuar(){
+
+    }
 
 }

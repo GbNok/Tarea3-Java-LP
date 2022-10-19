@@ -1,4 +1,4 @@
-package usm.inf.lp.tarea.nodo;
+package game.nodo;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ abstract public class Nodo {
 
     abstract void interactuar();
 
-    void agregar_nodo() {
+    void agregarNodo() {
 
     }
 }

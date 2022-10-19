@@ -1,7 +1,7 @@
-package usm.inf.lp.tarea;
+package game;
 
-import usm.inf.lp.tarea.nodo.Nodo;
-import usm.inf.lp.tarea.nodo.NodoInicial;
+import game.nodo.NodoInicial;
+import game.nodo.Nodo;
 
 public class Mapa {
     Integer profundidad;
