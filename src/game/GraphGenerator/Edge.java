@@ -1,4 +1,4 @@
-package GraphGenerator;
+package game.GraphGenerator;
 
 public class Edge implements Comparable<Edge> {
     public final Integer x;

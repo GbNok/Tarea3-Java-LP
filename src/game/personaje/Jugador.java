@@ -11,8 +11,6 @@ public class Jugador extends Personaje {
     public Jugador(String nombre) {
         super(nombre, 500, 20, 20,5,1);
         itemAplicados = new ArrayList<Item>();
-        Item i = new Item(20, 10, 10, 10,10);
-        itemAplicados.add(i);
     }
 
     public List<Item> getItemAplicados() {
@@ -21,17 +19,16 @@ public class Jugador extends Personaje {
 
     public void verEstado() {
         System.out.printf("Nombre: %s\n", this.nombre);
-        System.out.printf("Dinero: %d\n", this.dinero);
-        System.out.printf("Hp actual: %d\n", this.hpActual);
-        System.out.printf("Hp total: %d\n", this.hpTotal);
-        System.out.printf("Danio/Defensa: %d / %d\n", this.danio, this. defensa);
+        System.out.printf("     Hp actual/Hp total: %d/%d\n", this.hpActual, this.hpTotal);
+        System.out.printf("     Danio: %d\n", this.danio);
+        System.out.printf("     Defensa: %d\n", this.defensa);
+        System.out.printf("     Dinero: %d\n", this.dinero);
     }
 
     public void verItems() {
         for (Item item : itemAplicados){
             item.viewItem();
         }
-        System.out.println("No tengo nada");
     }
 
     public void agregarItem(Item item){
@@ -41,5 +38,8 @@ public class Jugador extends Personaje {
         this.defensa += item.getAumentarDefensa();
         this.hpTotal += item.getAumentarHpTotal();
         this.hpActual += item.getRecuperarHp();
+    }
+    public void cobrar(int price){
+        this.dinero -= price;
     }
 }

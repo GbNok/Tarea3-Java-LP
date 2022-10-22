@@ -3,13 +3,15 @@ package game;
 import game.personaje.Jugador;
 
 public class Item {
+    private final String name;
     private final int precio;
     private final int recuperarHp;
     private final int aumentarHpTotal;
     private final int aumentarDanio;
     private final int aumentarDefensa;
 
-    public Item(int precio, int recuperarHp, int aumentarHpTotal, int aumentarDanio, int aumentarDefensa) {
+    public Item(String name, int precio, int recuperarHp, int aumentarHpTotal, int aumentarDanio, int aumentarDefensa) {
+        this.name = name;
         this.precio = precio;
         this.recuperarHp = recuperarHp;
         this.aumentarHpTotal = aumentarHpTotal;
@@ -18,7 +20,6 @@ public class Item {
     }
     public void aplicar(Jugador j) {
         j.agregarItem(this);
-        System.out.println("estoy terribl brigido");
     }
 
     public int getPrecio(){
@@ -41,10 +42,11 @@ public class Item {
 
 
     public void viewItem(){
-        System.out.printf("Precio: %d\n", this.precio);
-        System.out.printf("Curacion: %d\n", this.recuperarHp);
-        System.out.printf("Aumentar hp total: %d\n", this.aumentarHpTotal);
-        System.out.printf("Aumentar danio total: %d\n", this.aumentarDanio);
-        System.out.printf("Aumentar defensa total: %d\n\n", this.aumentarDefensa);
+        System.out.println(this.name);
+        System.out.printf("     Precio: %d\n", this.precio);
+        System.out.printf("     Curacion: %d\n", this.recuperarHp);
+        System.out.printf("     Aumentar hp total: %d\n", this.aumentarHpTotal);
+        System.out.printf("     Aumentar danio total: %d\n", this.aumentarDanio);
+        System.out.printf("     Aumentar defensa total: %d\n\n", this.aumentarDefensa);
     }
 }

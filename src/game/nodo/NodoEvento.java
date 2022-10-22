@@ -1,16 +1,42 @@
 package game.nodo;
 
+import java.util.Scanner;
 import game.Item;
+import game.personaje.Jugador;
 
 public class NodoEvento extends Nodo {
-    String descripcion;
-    String alternativa1;
-    String alternativa2;
-    Item resultado1;
-    Item resultado2;
+    private final String descripcion;
+    private final String alternativa1;
+    private final String alternativa2;
+    private final Item resultado1;
+    private final Item resultado2;
 
-    void interactuar(){
-
+    public NodoEvento(String descripcion, String alternativa1, String alternativa2, Item resultado1, Item resultado2){
+        this.descripcion = descripcion;
+        this.alternativa1 = alternativa1;
+        this.alternativa2 = alternativa2;
+        this.resultado1 = resultado1;
+        this.resultado2 = resultado2;
     }
 
+    void interactuar(Jugador jugador){
+        Scanner read = new Scanner(System.in);
+
+        System.out.println(this.descripcion);
+
+        System.out.printf("1) %s", this.alternativa1);
+        System.out.printf("2) %s", this.alternativa2);
+        System.out.println("Select path: ");
+
+        int way = read.nextInt();
+        while (way != 1 && way != 2){
+            way = read.nextInt();
+        }
+
+        if (way == 1){
+            this.resultado1.aplicar(jugador);
+        } else if (way == 2){
+            this.resultado2.aplicar(jugador);
+        }
+    }
 }

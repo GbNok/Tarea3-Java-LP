@@ -1,7 +1,9 @@
 package game.nodo;
 
-public class NodoInicial extends Nodo{
-    void interactuar(){
+import game.personaje.Jugador;
 
+public class NodoInicial extends Nodo{
+    void interactuar(Jugador jugador){
+        System.out.println("Chupame le pico");
     }
 }

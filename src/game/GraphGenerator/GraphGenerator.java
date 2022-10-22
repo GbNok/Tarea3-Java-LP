@@ -1,4 +1,4 @@
-package GraphGenerator;
+package game.GraphGenerator;
 
 import java.util.Random;
 import java.util.SortedSet;

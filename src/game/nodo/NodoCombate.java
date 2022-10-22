@@ -1,15 +1,16 @@
 package game.nodo;
 
+import game.personaje.Jugador;
 import game.personaje.Personaje;
 
 public class NodoCombate extends Nodo {
-    Personaje enemigo;
+    private final Personaje enemigo;
 
-    public NodoCombate() {
-        this.enemigo = new Personaje("The dark one", 0, 10, 10, 10, 10);
+    public NodoCombate(Personaje enemigo) {
+        this.enemigo = enemigo;
     }
 
-    void interactuar(){
-
+    public void interactuar(Jugador jugador){
+        jugador.combate(this.enemigo);
     }
 }
