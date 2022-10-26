@@ -6,10 +6,15 @@ import game.personaje.Personaje;
 public  class NodoJefeFinal extends Nodo {
     private final Personaje jefe;
 
-    public NodoJefeFinal(){
-        this.jefe = new Personaje("The dark one", 0, 10, 10, 10, 10);
+    public NodoJefeFinal(int id){
+        super(id);
+        this.jefe = new Personaje("The dark one", 0, 10, 10, 1, 10);
     }
-    void interactuar(Jugador jugador){
+    public void interactuar(Jugador jugador){
         jugador.combate(this.jefe);
+    }
+
+    public void viewType(){
+        System.out.println(getId() + ") Final");
     }
 }

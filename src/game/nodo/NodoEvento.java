@@ -11,7 +11,8 @@ public class NodoEvento extends Nodo {
     private final Item resultado1;
     private final Item resultado2;
 
-    public NodoEvento(String descripcion, String alternativa1, String alternativa2, Item resultado1, Item resultado2){
+    public NodoEvento(String descripcion, String alternativa1, String alternativa2, Item resultado1, Item resultado2, int id){
+        super(id);
         this.descripcion = descripcion;
         this.alternativa1 = alternativa1;
         this.alternativa2 = alternativa2;
@@ -19,14 +20,14 @@ public class NodoEvento extends Nodo {
         this.resultado2 = resultado2;
     }
 
-    void interactuar(Jugador jugador){
+    public void interactuar(Jugador jugador){
         Scanner read = new Scanner(System.in);
 
         System.out.println(this.descripcion);
 
-        System.out.printf("1) %s", this.alternativa1);
-        System.out.printf("2) %s", this.alternativa2);
-        System.out.println("Select path: ");
+        System.out.printf("1) %s\n", this.alternativa1);
+        System.out.printf("2) %s\n", this.alternativa2);
+        System.out.println("Que vas a hacer: ");
 
         int way = read.nextInt();
         while (way != 1 && way != 2){
@@ -38,5 +39,9 @@ public class NodoEvento extends Nodo {
         } else if (way == 2){
             this.resultado2.aplicar(jugador);
         }
+    }
+
+    public void viewType(){
+        System.out.println(getId() + ") Evento");
     }
 }

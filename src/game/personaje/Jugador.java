@@ -37,7 +37,13 @@ public class Jugador extends Personaje {
         this.danio += item.getAumentarDanio();
         this.defensa += item.getAumentarDefensa();
         this.hpTotal += item.getAumentarHpTotal();
-        this.hpActual += item.getRecuperarHp();
+        if (this.hpActual < this.hpTotal){
+            if (this.hpActual + item.getRecuperarHp() > this.hpTotal){
+                this.hpActual = this.hpTotal;
+            }else{
+                this.hpActual += item.getRecuperarHp();
+            }
+        }
     }
     public void cobrar(int price){
         this.dinero -= price;

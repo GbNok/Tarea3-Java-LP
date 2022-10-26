@@ -10,7 +10,8 @@ import java.util.Scanner;
 public class NodoTienda extends Nodo {
     ArrayList<Item> inventario;
 
-    public NodoTienda(ArrayList<Item> inventario) {
+    public NodoTienda(ArrayList<Item> inventario, int id) {
+        super(id);
         this.inventario = inventario;
     }
 
@@ -40,6 +41,9 @@ public class NodoTienda extends Nodo {
                 cont = read.next();
             }
         }
+    }
+    public void viewType(){
+        System.out.println(getId() + ") Tienda");
     }
 
     void comrar(int i, Jugador jugador){

@@ -2,19 +2,30 @@ package game.nodo;
 
 import game.personaje.Jugador;
 
-import java.util.List;
+import java.util.ArrayList;
 
 abstract public class Nodo {
     private int id;
-    private List<Nodo> siguientes_nodos;
+    private ArrayList<Nodo> siguientes_nodos;
 
-    abstract void interactuar(Jugador jugador);
+    abstract public void interactuar(Jugador jugador);
 
-    void agregarNodo() {
+    abstract public void viewType();
 
+    public Nodo(int id){
+        this.id = id;
+        this.siguientes_nodos = new ArrayList<Nodo>();
     }
 
-    public List<Nodo> getSiguientesNodos(){
+    public void agregarNodo(Nodo node) {
+        this.siguientes_nodos.add(node);
+    }
+
+    public ArrayList<Nodo> getSiguientesNodos(){
         return this.siguientes_nodos;
+    }
+
+    public int getId(){
+        return this.id;
     }
 }

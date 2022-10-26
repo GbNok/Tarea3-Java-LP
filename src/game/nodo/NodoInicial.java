@@ -3,7 +3,15 @@ package game.nodo;
 import game.personaje.Jugador;
 
 public class NodoInicial extends Nodo{
-    void interactuar(Jugador jugador){
-        System.out.println("Chupame le pico");
+
+    public NodoInicial(int id){
+        super(id);
+    }
+    public void interactuar(Jugador jugador){
+        System.out.println("");
+    }
+    public void viewType(){
+
+        System.out.println(getId()+ " Inicio");
     }
 }
