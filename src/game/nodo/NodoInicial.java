@@ -8,10 +8,9 @@ public class NodoInicial extends Nodo{
         super(id);
     }
     public void interactuar(Jugador jugador){
-        System.out.println("");
+        System.out.println("Esto es la introduccion  la historia. Es terrile fome. No se que contar. Pero creo que voy a partir regalando espadas brigidas");
     }
-    public void viewType(){
-
-        System.out.println(getId()+ " Inicio");
+    public String getType(){
+        return "Inicio";
     }
 }

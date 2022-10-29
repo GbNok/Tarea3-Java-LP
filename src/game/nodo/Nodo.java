@@ -5,12 +5,12 @@ import game.personaje.Jugador;
 import java.util.ArrayList;
 
 abstract public class Nodo {
-    private int id;
+    private final int id;
     private ArrayList<Nodo> siguientes_nodos;
 
     abstract public void interactuar(Jugador jugador);
 
-    abstract public void viewType();
+    abstract public String getType();
 
     public Nodo(int id){
         this.id = id;

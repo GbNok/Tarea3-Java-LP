@@ -26,23 +26,23 @@ public class Jugador extends Personaje {
     }
 
     public void verItems() {
-        for (Item item : itemAplicados){
+        if (this.itemAplicados.size() == 0){
+            System.out.println("No tienes items");
+        }
+        for (Item item : this.itemAplicados){
             item.viewItem();
         }
     }
 
     public void agregarItem(Item item){
         itemAplicados.add(item);
-        this.dinero -= item.getPrecio();
         this.danio += item.getAumentarDanio();
         this.defensa += item.getAumentarDefensa();
         this.hpTotal += item.getAumentarHpTotal();
-        if (this.hpActual < this.hpTotal){
-            if (this.hpActual + item.getRecuperarHp() > this.hpTotal){
-                this.hpActual = this.hpTotal;
-            }else{
-                this.hpActual += item.getRecuperarHp();
-            }
+        if (this.hpActual + item.getRecuperarHp() > this.hpTotal){
+            this.hpActual = this.hpTotal;
+        }else{
+            this.hpActual += item.getRecuperarHp();
         }
     }
     public void cobrar(int price){

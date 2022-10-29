@@ -4,7 +4,6 @@ import game.Item;
 import game.personaje.Jugador;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class NodoTienda extends Nodo {
@@ -23,27 +22,27 @@ public class NodoTienda extends Nodo {
             item.viewItem();
             count++;
         }
-        System.out.printf("Desea comprar algo? (SI/NO) ");
+        System.out.println("Desea comprar algo? (SI/NO) ");
         String cont = read.next();
         while (!cont.equals("SI") && !cont.equals("NO")){
-            System.out.printf("Respuesta no valida (Si/NO): ");
+            System.out.println("Respuesta no valida (Si/NO): ");
             cont = read.next();
         }
 
         while (!cont.equals("NO")) {
-            System.out.printf("Seleccionar numero de item: ");
+            System.out.println("Seleccionar numero de item: ");
             int buy = read.nextInt();
             this.comrar(buy - 1, jugador);
-            System.out.printf("Desea seguir comprando? (SI/NO) ");
+            System.out.println("Desea seguir comprando? (SI/NO) ");
             cont = read.next();
             while (!cont.equals("SI") && !cont.equals("NO")){
-                System.out.printf("Respuesta no valida (Si/NO): ");
+                System.out.println("Respuesta no valida (Si/NO): ");
                 cont = read.next();
             }
         }
     }
-    public void viewType(){
-        System.out.println(getId() + ") Tienda");
+    public String getType(){
+        return "Tienda";
     }
 
     void comrar(int i, Jugador jugador){

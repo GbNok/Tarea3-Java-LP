@@ -14,7 +14,7 @@ public class NodoCombate extends Nodo {
     public void interactuar(Jugador jugador){
         jugador.combate(this.enemigo);
     }
-    public void viewType(){
-        System.out.println(getId() + ") Pelea");
+    public String getType(){
+        return "Pelea";
     }
 }

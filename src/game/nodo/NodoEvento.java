@@ -33,15 +33,18 @@ public class NodoEvento extends Nodo {
         while (way != 1 && way != 2){
             way = read.nextInt();
         }
+        System.out.println("Recibes:");
 
         if (way == 1){
             this.resultado1.aplicar(jugador);
+            this.resultado1.viewItem();
         } else if (way == 2){
             this.resultado2.aplicar(jugador);
+            this.resultado2.viewItem();
         }
     }
 
-    public void viewType(){
-        System.out.println(getId() + ") Evento");
+    public String getType(){
+        return "Evento";
     }
 }

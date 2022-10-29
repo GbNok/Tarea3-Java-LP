@@ -14,7 +14,7 @@ public  class NodoJefeFinal extends Nodo {
         jugador.combate(this.jefe);
     }
 
-    public void viewType(){
-        System.out.println(getId() + ") Final");
+    public String getType(){
+        return "Final";
     }
 }
