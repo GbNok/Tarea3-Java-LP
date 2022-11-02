@@ -10,6 +10,16 @@ public class Item {
     private final int aumentarDanio;
     private final int aumentarDefensa;
 
+    /*
+    Constructor de Item. Recibe al informacion del item y la asigna a cada uno de los atributos correspondientes
+
+    @param name (String): Nombre del item
+    @param precio (int): Precio del item
+    @param recuperarHp (int): Cantidad de hp que recupera el item
+    @param aumentarHpTotal (int): Cantidad de hp total que aumenta el item
+    @param aumentarDanio (int): Cantidad de danio que aumenta el item
+    @param aumentarDefensa (int): Cantidad de defensa que aumenta el item
+     */
     public Item(String name, int precio, int recuperarHp, int aumentarHpTotal, int aumentarDanio, int aumentarDefensa) {
         this.name = name;
         this.precio = precio;
@@ -18,10 +28,20 @@ public class Item {
         this.aumentarDanio = aumentarDanio;
         this.aumentarDefensa = aumentarDefensa;
     }
-    public void aplicar(Jugador j) {
-        j.agregarItem(this);
+
+    /*
+    Funcion que aplica un item a un jugador. Utilizando el metodo agragarItem de Jugador
+
+    @param jugador (Jugador): jugador al que se quiere aplicar el item
+     */
+    public void aplicar(Jugador jugador) {
+        jugador.agregarItem(this);
     }
 
+
+    public String getName(){
+        return this.name;
+    }
     public int getPrecio(){
         return precio;
     }
@@ -40,7 +60,17 @@ public class Item {
         return aumentarDefensa;
     }
 
+    /*
+    Funcion que imprime el item por pantalla. Mostrando su nombre y sus stats
+    de la forma:
 
+    Nombre:
+        Precio:
+        Curacion:
+        Aumentar hp total:
+        Aumentar danio  total
+        Aumentar defensa total:
+     */
     public void viewItem(){
         System.out.println(this.name);
         System.out.printf("     Precio: %d\n", this.precio);

@@ -11,7 +11,18 @@ public class NodoEvento extends Nodo {
     private final Item resultado1;
     private final Item resultado2;
 
-    public NodoEvento(String descripcion, String alternativa1, String alternativa2, Item resultado1, Item resultado2, int id){
+    /*
+    Constructor de NodoEvento. Asigna una descripcion del evento, las alternativas y los items de recompensa
+    segun la alternativa seleccionada
+
+    @param descripcion (String): Descripcion del evento
+    @param alternativa1 (String): La primera alternativa del evento
+    @param alternativa2 (String): La segunda alternativa del evento
+    @param resultado1 (String): Item de recompensa por ir a la alternativa1
+    @param resultado2 (String): Item de recompensa por ir a la alternativa2
+     */
+    public NodoEvento(String descripcion, String alternativa1, String alternativa2, Item resultado1, Item resultado2,
+            int id) {
         super(id);
         this.descripcion = descripcion;
         this.alternativa1 = alternativa1;
@@ -20,7 +31,15 @@ public class NodoEvento extends Nodo {
         this.resultado2 = resultado2;
     }
 
-    public void interactuar(Jugador jugador){
+    /*
+    Funcion para interactuar con el Evento.
+    Mustra la descripcion del evento por consolo. Luego mustra las dos alternativas.
+    Le pide al usuario ingresar que alternativa desea seleccionar. Y segun la alternativa le entrega
+    al jugador el item de resultado.
+
+    @param jugador (Jugador): jugador que interactua con el nodo
+     */
+    public void interactuar(Jugador jugador) {
         Scanner read = new Scanner(System.in);
 
         System.out.println(this.descripcion);
@@ -30,21 +49,21 @@ public class NodoEvento extends Nodo {
         System.out.println("Que vas a hacer: ");
 
         int way = read.nextInt();
-        while (way != 1 && way != 2){
+        while (way != 1 && way != 2) {
             way = read.nextInt();
         }
         System.out.println("Recibes:");
 
-        if (way == 1){
+        if (way == 1) {
             this.resultado1.aplicar(jugador);
             this.resultado1.viewItem();
-        } else if (way == 2){
+        } else if (way == 2) {
             this.resultado2.aplicar(jugador);
             this.resultado2.viewItem();
         }
     }
 
-    public String getType(){
+    public String getType() {
         return "Evento";
     }
 }
