@@ -32,6 +32,12 @@ out/Personaje: src/game/personaje/Personaje.java | out_dir
 out/Jugador: src/game/personaje/Jugador.java | out_dir
 	$(JC) $(SP) src/ -d out $^
 
+out/GraphGenerator: src/game/GraphGenerator/GraphGenerator.java | out_dir
+	$(JC) $(SP) src/ -d out $^
+
+out/Edge: src/game/GraphGenerator/Edge.java | out_dir
+	$(JC) $(SP) src/ -d out $^
+
 clean: 
 	rm -rf out
 

@@ -77,20 +77,13 @@ public class Mapa {
      */
     ArrayList<Personaje> createEnemys(){
         ArrayList<Personaje> malos = new ArrayList<>();
-        Personaje malo1 = new Personaje("K'Chain Che'Malle", 0,15, 10, 4, 1);
-        Personaje malo2 = new Personaje("Myrddraal", 0, 7,7, 10, 3);
-        Personaje malo3 = new Personaje("Trolloc", 0, 10, 10, 5, 3);
-        Personaje malo4 = new Personaje("Draghkar", 0, 5, 5, 10, 0);
-        Personaje malo5 = new Personaje("Gholam", 0, 7, 7, 5, 5);
-        Personaje malo6 = new Personaje("Darkhound", 0, 5, 5, 5, 0);
-        Personaje malo7 = new Personaje("Forsaken", 0, 10, 10, 10, 0);
-        malos.add(malo1);
-        malos.add(malo2);
-        malos.add(malo3);
-        malos.add(malo4);
-        malos.add(malo5);
-        malos.add(malo6);
-        malos.add(malo7);
+        malos.add(new Personaje("K'Chain Che'Malle", 0,15, 10, 4, 1));
+        malos.add(new Personaje("Myrddraal", 0, 7,7, 10, 3));
+        malos.add(new Personaje("Trolloc", 0, 10, 10, 5, 3));
+        malos.add(new Personaje("Draghkar", 0, 5, 5, 10, 0));
+        malos.add(new Personaje("Gholam", 0, 7, 7, 5, 5));
+        malos.add(new Personaje("Darkhound", 0, 5, 5, 5, 0));
+        malos.add(new Personaje("Forsaken", 0, 10, 10, 10, 0));
 
         return malos;
 
@@ -103,30 +96,40 @@ public class Mapa {
      */
     ArrayList<Item> createItems(){
         ArrayList<Item> items = new ArrayList<>();
-        Item item1 = new Item("Pocion Recuperar HP", 50, 100, 0, 0, 0);
-        Item item2 = new Item("Pocion Aumentar HP total", 150,0 , 10, 0, 0);
-        Item item3 = new Item("Pocion Aumentar danio", 50, 0, 0, 5, 0);
-        Item item4 = new Item("Pocion Aumentar defensa", 50, 100, 0, 0, 7);
-        Item item5 = new Item("Pocion de Combate", 100, 7, 0, 3, 3);
-        Item item6 = new Item("Pocion Escudo", 150, 100, 0, 0, 10);
-        Item item7 = new Item("Espada vieja", 130, 0, 0, 3, 2);
-        Item item8 = new Item("Dragnipur (Espada)", 500, 0, 0, 15, 10);
-        Item item9 = new Item("Callandor", 500, 0, 0, 10, 15);
-        Item item10 = new Item("Pocion Aupentar Hp y recuperar", 200, 100, 10, 0, 0);
-        Item item11 = new Item("Pocion Recuperar HP y danio", 150, 100, 0, 3, 0);
-        Item item12 = new Item("Pocion Curacion debil", 30, 10, 0, 0, 0);
-        items.add(item1);
-        items.add(item2);
-        items.add(item3);
-        items.add(item4);
-        items.add(item5);
-        items.add(item6);
-        items.add(item7);
-        items.add(item8);
-        items.add(item9);
-        items.add(item10);
-        items.add(item11);
-        items.add(item12);
+        items.add(new Item("Pocion Recuperar HP", 50, 100, 0, 0, 0));
+        items.add(new Item("Pocion Aumentar HP total", 150,0 , 10, 0, 0));
+        items.add(new Item("Pocion Aumentar danio", 50, 0, 0, 5, 0));
+        items.add(new Item("Pocion Aumentar defensa", 50, 100, 0, 0, 7));
+        items.add(new Item("Pocion de Combate", 100, 7, 0, 3, 3));
+        items.add(new Item("Pocion Escudo", 150, 100, 0, 0, 10));
+
+        RandomNumber num = new RandomNumber();
+
+        num.generateRandomNumbre(1, 6);
+
+        if ((int)num.getNumber() == 1){
+            items.add(new Item("Espada vieja", 130, 0, 0, 3, 2));
+        }
+        if ((int)num.getNumber() == 2){
+         items.add(new Item("Dragnipur (Espada)", 500, 0, 0, 15, 10));
+
+        }
+        if ((int)num.getNumber() == 3){
+
+           items.add(new Item("Callandor", 500, 0, 0, 10, 15));
+        }
+        if ((int)num.getNumber() == 4){
+
+            items.add(new Item("Pocion Aupentar Hp y recuperar", 200, 100, 10, 0, 0));
+        }
+        if ((int)num.getNumber() == 5){
+
+            items.add(new Item("Pocion Recuperar HP y danio", 150, 100, 0, 3, 0));
+        }
+        if ((int)num.getNumber() == 6){
+
+            items.add(new Item("Pocion Curacion debil", 30, 10, 0, 0, 0));
+        }
         return items;
     }
 
